@@ -62,13 +62,22 @@ async function main() {
       });
 
       ilsiPrice += (Number(amount) * Number(price)) / Math.pow(10, decimals);
-      await sleep(3000);
+      await delay(5000);
     }
-    console.log(`${date}, ${ilsiPrice}`);
+
+    let pricebtc = await (
+      await fetch(
+        `https://api.coingecko.com/api/v3/coins/bitcoin/history?date=${date}`
+      )
+    ).json();
+    pricebtc = pricebtc.market_data.current_price.usd;
+
+    console.log(`${date}, ${ilsiPrice}, ${pricebtc}`);
   };
 
-  await getPriceAtDate("01-12-2021");
+  /* await getPriceAtDate("01-12-2021");
   await getPriceAtDate("02-12-2021");
+  await getPriceAtDate("03-12-2021");
   await getPriceAtDate("04-12-2021");
   await getPriceAtDate("05-12-2021");
   await getPriceAtDate("06-12-2021");
@@ -78,8 +87,9 @@ async function main() {
   await getPriceAtDate("10-12-2021");
   await getPriceAtDate("11-12-2021");
   await getPriceAtDate("12-12-2021");
+  await getPriceAtDate("13-12-2021");
   await getPriceAtDate("14-12-2021");
-  await getPriceAtDate("15-12-2021");
+  await getPriceAtDate("15-12-2021"); */
   await getPriceAtDate("16-12-2021");
   await getPriceAtDate("17-12-2021");
   await getPriceAtDate("18-12-2021");
@@ -87,6 +97,7 @@ async function main() {
   await getPriceAtDate("20-12-2021");
   await getPriceAtDate("21-12-2021");
   await getPriceAtDate("22-12-2021");
+  await getPriceAtDate("23-12-2021");
   await getPriceAtDate("24-12-2021");
   await getPriceAtDate("25-12-2021");
   await getPriceAtDate("26-12-2021");
@@ -98,6 +109,7 @@ async function main() {
 
   await getPriceAtDate("01-1-2022");
   await getPriceAtDate("02-1-2022");
+  await getPriceAtDate("03-1-2022");
   await getPriceAtDate("04-1-2022");
   await getPriceAtDate("05-1-2022");
   await getPriceAtDate("06-1-2022");
@@ -107,6 +119,7 @@ async function main() {
   await getPriceAtDate("10-1-2022");
   await getPriceAtDate("11-1-2022");
   await getPriceAtDate("12-1-2022");
+  await getPriceAtDate("13-1-2022");
   await getPriceAtDate("14-1-2022");
   await getPriceAtDate("15-1-2022");
   await getPriceAtDate("16-1-2022");
@@ -116,9 +129,11 @@ async function main() {
   await getPriceAtDate("20-1-2022");
   await getPriceAtDate("21-1-2022");
   await getPriceAtDate("22-1-2022");
+  await getPriceAtDate("23-1-2022");
   await getPriceAtDate("24-1-2022");
   await getPriceAtDate("25-1-2022");
   await getPriceAtDate("26-1-2022");
+
   /* await getPriceAtDate("27-1-2022");
   await getPriceAtDate("28-1-2022");
   await getPriceAtDate("29-1-2022");
@@ -128,8 +143,4 @@ async function main() {
 
 main();
 
-function sleep(ms) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
-}
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
