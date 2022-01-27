@@ -58,11 +58,11 @@ async function main() {
         address: componentAddress,
         amount: Number(amount),
         price: Number(price),
-        decimals: Number(decimals)
+        decimals: Number(decimals),
       });
 
       ilsiPrice += (Number(amount) * Number(price)) / Math.pow(10, decimals);
-      await delay(5000);
+      await delay(6000);
     }
 
     let pricebtc = await (
@@ -89,7 +89,7 @@ async function main() {
   await getPriceAtDate("12-12-2021");
   await getPriceAtDate("13-12-2021");
   await getPriceAtDate("14-12-2021");
-  await getPriceAtDate("15-12-2021"); */
+  await getPriceAtDate("15-12-2021");
   await getPriceAtDate("16-12-2021");
   await getPriceAtDate("17-12-2021");
   await getPriceAtDate("18-12-2021");
@@ -105,8 +105,8 @@ async function main() {
   await getPriceAtDate("28-12-2021");
   await getPriceAtDate("29-12-2021");
   await getPriceAtDate("30-12-2021");
-  await getPriceAtDate("31-12-2021");
-
+  await getPriceAtDate("31-12-2021"); 
+  
   await getPriceAtDate("01-1-2022");
   await getPriceAtDate("02-1-2022");
   await getPriceAtDate("03-1-2022");
@@ -124,7 +124,7 @@ async function main() {
   await getPriceAtDate("15-1-2022");
   await getPriceAtDate("16-1-2022");
   await getPriceAtDate("17-1-2022");
-  await getPriceAtDate("18-1-2022");
+  await getPriceAtDate("18-1-2022"); 
   await getPriceAtDate("19-1-2022");
   await getPriceAtDate("20-1-2022");
   await getPriceAtDate("21-1-2022");
@@ -134,7 +134,7 @@ async function main() {
   await getPriceAtDate("25-1-2022");
   await getPriceAtDate("26-1-2022");
 
-  /* await getPriceAtDate("27-1-2022");
+  await getPriceAtDate("27-1-2022");
   await getPriceAtDate("28-1-2022");
   await getPriceAtDate("29-1-2022");
   await getPriceAtDate("30-1-2022");
